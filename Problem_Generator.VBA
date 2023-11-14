@@ -27,6 +27,24 @@ Sub ChangeWhiteToBlack()
     Next c
 End Sub
 
+Sub FormatText()
+    Selection.Font.Size = 8
+    Selection.ParagraphFormat.LineSpacingRule = wdLineSpaceSingle
+    Selection.ParagraphFormat.SpaceBefore = 0
+    Selection.ParagraphFormat.SpaceAfter = 0
+End Sub
+            
+
+Sub ChangeHighlightToBold_Word()
+    For Each c In Selection.Characters
+        If c.HighlightColorIndex <> wdNoHighlight Then
+            c.HighlightColorIndex = wdNoHighlight
+            c.Font.Bold = True
+        End If
+    Next c
+End Sub
+
+
 Sub MathType2Word()
     ' By Amin Yahyaabadi
     ' MathType2Word Macro: to convert Mathtype Equations to Microsoft Word Equations
